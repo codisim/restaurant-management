@@ -8,3 +8,13 @@ class User(ABC):
         self.email = email
         self.phobe = phobe
         self.address = address
+
+
+
+
+class Employee(User):
+    def __init__(self, name, email, phone, address, age, dasignation, salary):
+        super().__init__(name, email, phone, address)
+        self.age = age
+        self.dasignation = dasignation
+        self.salary = salary
