@@ -32,4 +32,6 @@ class Admin(User):
         super().__init__(name, email, phone, address)
         self.employees = []
 
-    
+    def add_employee(self, name, email, phone, address):
+        employee = Employee(name, email, phone, address)
+        self.employees.append(employee) 
