@@ -34,7 +34,25 @@ class Customer(User):
         for item, quantity in self.card.items.items():
             print(f"{item.name}\t{item.price}\t{quantity}")
         
+        print(f"Total Price: {self.card.total_price()}")
+        
+        
+        
+        
 
+class Order():
+    def __init__(self):
+        self.items = []
+        
+    def add_item(self, item):
+        if item in self.items:
+            self.items[item] += item.quantity
+        else:
+            self.items[item] = item.quantity
+        
+        
+        
+        
 
 # Employee class to represent an employee of the restaurant
 class Employee(User):
