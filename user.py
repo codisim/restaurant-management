@@ -88,8 +88,9 @@ class Menu():
             
     def view_menu(self):
         print("Menu Items:")
+        print("Name\tPrice\tQuantity")
         for item in self.items:
-            print(f"Name: {item.name}, Price: {item.price}, Description: {item.description}")
+            print(f"{item.name}\t{item.price}\t{item.quantity}")
             
     
     
@@ -105,7 +106,14 @@ class MenuItem():
     
     
     
-    mn = Menu("My Menu")
+mn = Menu()
+item1 = MenuItem("Pizza", 10.99, 20)
+item2 = MenuItem("Burger", 5.99, 30)
+item3 = MenuItem("Pasta", 8.99, 25)
+mn.add_item(item1)
+mn.add_item(item2)
+mn.add_item(item3)
+mn.view_menu()
 
 
 
@@ -135,12 +143,12 @@ class MenuItem():
 
 
 
-ad = Admin("Admin", "admin@example.com", "0987654321", "456 Admin St")
-restaurant = Restaurant("My Restaurant")
-ad.add_employee(restaurant, Employee("Rahim", "rahim@example.com", "1234567890", "123 Main St", 30, "Manager", 50000))
-ad.add_employee(restaurant, Employee("Karim", "karim@example.com", "0987654321", "456 Main St", 25, "Developer", 40000))
-ad.add_employee(restaurant, Employee("Jamal", "jamal@example.com", "1111111111", "789 Main St", 28, "Designer", 45000))
-ad.view_employees()
+# ad = Admin("Admin", "admin@example.com", "0987654321", "456 Admin St")
+# restaurant = Restaurant("My Restaurant")
+# ad.add_employee(restaurant, Employee("Rahim", "rahim@example.com", "1234567890", "123 Main St", 30, "Manager", 50000))
+# ad.add_employee(restaurant, Employee("Karim", "karim@example.com", "0987654321", "456 Main St", 25, "Developer", 40000))
+# ad.add_employee(restaurant, Employee("Jamal", "jamal@example.com", "1111111111", "789 Main St", 28, "Designer", 45000))
+# ad.view_employees()
 
 
 
