@@ -19,6 +19,13 @@ class Customer(User):
         
     def view_menu(self, restaurant):
         restaurant.menu.view_menu()
+        
+    def add_to_cart(self, restaurant, item_name):
+        item = restaurant.menu.find_item(item_name)
+        if item:
+            self.card.add_item(item)
+        else:
+            print(f"Item '{item_name}' not found in the menu.")
 
 
 # Employee class to represent an employee of the restaurant
