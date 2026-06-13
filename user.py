@@ -26,6 +26,14 @@ class Customer(User):
             self.card.add_item(item)
         else:
             print(f"Item '{item_name}' not found in the menu.")
+            
+            
+    def view_cart(self):
+        print("Cart Items:")
+        print("Name\tPrice\tQuantity")
+        for item, quantity in self.card.items.items():
+            print(f"{item.name}\t{item.price}\t{quantity}")
+        
 
 
 # Employee class to represent an employee of the restaurant
