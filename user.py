@@ -35,3 +35,9 @@ class Admin(User):
     def add_employee(self, name, email, phone, address):
         employee = Employee(name, email, phone, address)
         self.employees.append(employee) 
+        print(f"Employee {name} added successfully.")
+
+    def view_employees(self):
+        print("List of Employees:")
+        for employee in self.employees:
+            print(f"Name: {employee.name}, Email: {employee.email}, Phone: {employee.phobe}, Address: {employee.address}")
