@@ -55,6 +55,10 @@ class Order():
             del self.items[item]
         else:
             print(f"Item '{item.name}' not found in the cart.")
+            
+            
+    def total_price(self):
+        return sum(item.price * quantity for item, quantity in self.items.items()) 
         
         
         
