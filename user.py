@@ -18,3 +18,6 @@ class Employee(User):
         self.age = age
         self.dasignation = dasignation
         self.salary = salary
+
+
+emp = Employee("Rahim", "rahim@example.com", "1234567890", "123 Main St", 30, "Manager", 50000)
