@@ -12,6 +12,15 @@ class User(ABC):
 
 
 
+class Customer(User):
+    def __init__(self, name, email, phone, address):
+        super().__init__(name, email, phone, address)
+        self.card = Node
+        
+    def view_menu(self, restaurant):
+        restaurant.menu.view_menu()
+
+
 # Employee class to represent an employee of the restaurant
 class Employee(User):
     def __init__(self, name, email, phone, address, age, designation, salary):
@@ -43,6 +52,8 @@ class Admin(User):
     def add_menu_item(self, restaurant, item):
         restaurant.menu.add_item(item)
         
+    def remove_menu_item(self, restaurant, item_name):
+        restaurant.menu.remove_item(item_name)
         
     
 
