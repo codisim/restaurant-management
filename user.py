@@ -15,14 +15,15 @@ class User(ABC):
 class Customer(User):
     def __init__(self, name, email, phone, address):
         super().__init__(name, email, phone, address)
-        self.card = Node
+        self.card = Order()
         
     def view_menu(self, restaurant):
         restaurant.menu.view_menu()
         
-    def add_to_cart(self, restaurant, item_name):
+    def add_to_cart(self, restaurant, item_name, quantity):
         item = restaurant.menu.find_item(item_name)
         if item:
+            item.quantity = quantity
             self.card.add_item(item)
         else:
             print(f"Item '{item_name}' not found in the menu.")
