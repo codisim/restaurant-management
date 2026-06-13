@@ -90,6 +90,22 @@ class Menu():
         print("Menu Items:")
         for item in self.items:
             print(f"Name: {item.name}, Price: {item.price}, Description: {item.description}")
+            
+    
+    
+
+class MenuItem():
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+    
+    
+    
+    
+    
+    
+    mn = Menu("My Menu")
 
 
 
