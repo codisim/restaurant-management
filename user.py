@@ -34,14 +34,14 @@ class Admin(User):
 
     def add_employee(self, restaurant, employee):
         restaurant.add_employee(employee)
-        
 
+
+    def view_employees(self, restaurant):
+        restaurant.view_employees()
+        
     
 
-    def view_employees(self):
-        print("List of Employees:")
-        for employee in self.employees:
-            print(f"Name: {employee.name}, Email: {employee.email}, Phone: {employee.phobe}, Address: {employee.address}, Age: {employee.age}, Designation: {employee.dasignation}, Salary: {employee.salary}")
+
 
 
 
@@ -54,6 +54,12 @@ class Restaurant():
 
     def add_employee(self, employee):
         self.employees.append(employee) 
+
+
+    def view_employees(self):
+        print("List of Employees:")
+        for employee in self.employees:
+            print(f"Name: {employee.name}, Email: {employee.email}, Phone: {employee.phobe}, Address: {employee.address}, Age: {employee.age}, Designation: {employee.dasignation}, Salary: {employee.salary}")
 
 
 
