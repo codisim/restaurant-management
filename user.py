@@ -2,6 +2,7 @@
 from abc import ABC
 
 
+# User class to represent a user of the restaurant system
 class User(ABC):
     def __init__(self, name, email, phobe, address):
         self.name = name
@@ -11,12 +12,12 @@ class User(ABC):
 
 
 
-
+# Employee class to represent an employee of the restaurant
 class Employee(User):
-    def __init__(self, name, email, phone, address, age, dasignation, salary):
+    def __init__(self, name, email, phone, address, age, designation, salary):
         super().__init__(name, email, phone, address)
         self.age = age
-        self.dasignation = dasignation
+        self.designation = designation
         self.salary = salary
 
 
@@ -26,7 +27,7 @@ class Employee(User):
 
 
 
-
+# Admin class to manage employees
 class Admin(User):
     def __init__(self, name, email, phone, address):
         super().__init__(name, email, phone, address)
@@ -44,9 +45,7 @@ class Admin(User):
 
 
 
-
-
-
+# Restaurant class to manage employees
 class Restaurant():
     def __init__(self, name):
         self.name = name
@@ -60,6 +59,53 @@ class Restaurant():
         print("List of Employees:")
         for employee in self.employees:
             print(f"Name: {employee.name}, Email: {employee.email}, Phone: {employee.phobe}, Address: {employee.address}, Age: {employee.age}, Designation: {employee.dasignation}, Salary: {employee.salary}")
+
+
+
+# Menu class to represent a menu item
+class Menu():
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, item):
+        self.items.append(item)
+
+
+    def find_item(self, item_name):
+        for item in self.items:
+            if item.name.lower() == item_name.lower():
+                return item
+        return None
+
+    def remove_item(self, item_name):
+        item = self.find_item(item_name)
+        if item:
+            self.items.remove(item)
+            print(f"Item '{item_name}' removed from the menu.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
