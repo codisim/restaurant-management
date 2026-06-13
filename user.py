@@ -49,6 +49,12 @@ class Order():
             self.items[item] += item.quantity
         else:
             self.items[item] = item.quantity
+            
+    def remove_item(self, item):
+        if item in self.items:
+            del self.items[item]
+        else:
+            print(f"Item '{item.name}' not found in the cart.")
         
         
         
