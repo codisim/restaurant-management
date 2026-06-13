@@ -82,6 +82,14 @@ class Menu():
         if item:
             self.items.remove(item)
             print(f"Item '{item_name}' removed from the menu.")
+        else:
+            print(f"Item '{item_name}' not found in the menu.")
+            
+            
+    def view_menu(self):
+        print("Menu Items:")
+        for item in self.items:
+            print(f"Name: {item.name}, Price: {item.price}, Description: {item.description}")
 
 
 
