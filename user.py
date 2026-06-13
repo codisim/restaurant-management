@@ -30,12 +30,13 @@ class Employee(User):
 class Admin(User):
     def __init__(self, name, email, phone, address):
         super().__init__(name, email, phone, address)
-        self.employees = []
 
-    def add_employee(self, name, email, phone, address, age, designation, salary):
-        employee = Employee(name, email, phone, address, age, designation, salary)
-        self.employees.append(employee) 
-        print(f"Employee {name} added successfully.")
+
+    def add_employee(self, restaurant, employee):
+        restaurant.add_employee(employee)
+        
+
+    
 
     def view_employees(self):
         print("List of Employees:")
@@ -44,8 +45,30 @@ class Admin(User):
 
 
 
+
+
+class Restaurant():
+    def __init__(self, name):
+        self.name = name
+        self.employees = []
+
+    def add_employee(self, employee):
+        self.employees.append(employee) 
+
+
+
+
+
 ad = Admin("Admin", "admin@example.com", "0987654321", "456 Admin St")
-ad.add_employee("Rahim", "rahim@example.com", "1234567890", "123 Main St", 30, "Manager", 50000)
-ad.add_employee("Karim", "karim@example.com", "0987654321", "456 Main St", 25, "Developer", 40000)
-ad.add_employee("Jamal", "jamal@example.com", "1111111111", "789 Main St", 28, "Designer", 45000)
+restaurant = Restaurant("My Restaurant")
+ad.add_employee(restaurant, Employee("Rahim", "rahim@example.com", "1234567890", "123 Main St", 30, "Manager", 50000))
+ad.add_employee(restaurant, Employee("Karim", "karim@example.com", "0987654321", "456 Main St", 25, "Developer", 40000))
+ad.add_employee(restaurant, Employee("Jamal", "jamal@example.com", "1111111111", "789 Main St", 28, "Designer", 45000))
 ad.view_employees()
+
+
+
+
+
+
+
