@@ -40,6 +40,10 @@ class Admin(User):
     def view_employees(self, restaurant):
         restaurant.view_employees()
         
+    def add_menu_item(self, restaurant, item):
+        restaurant.menu.add_item(item)
+        
+        
     
 
 
@@ -50,6 +54,7 @@ class Restaurant():
     def __init__(self, name):
         self.name = name
         self.employees = []
+        self.menu = Menu()
 
     def add_employee(self, employee):
         self.employees.append(employee) 
@@ -57,8 +62,11 @@ class Restaurant():
 
     def view_employees(self):
         print("List of Employees:")
+        print("Name\tEmail\tPhone\tAddress\tAge\tDesignation\tSalary")
         for employee in self.employees:
-            print(f"Name: {employee.name}, Email: {employee.email}, Phone: {employee.phobe}, Address: {employee.address}, Age: {employee.age}, Designation: {employee.dasignation}, Salary: {employee.salary}")
+            print(f"{employee.name}\t{employee.email}\t{employee.phobe}\t{employee.address}\t{employee.age}\t{employee.designation}\t{employee.salary}")
+            
+            
 
 
 
