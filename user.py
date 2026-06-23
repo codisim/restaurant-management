@@ -23,6 +23,8 @@ class Customer(User):
     def add_to_cart(self, restaurant, item_name, quantity):
         item = restaurant.menu.find_item(item_name)
         if item:
+            if quantity > item.quantity:
+                print("Item quantity exceeds available stock.")
             item.quantity = quantity
             self.card.add_item(item)
         else:
@@ -181,11 +183,6 @@ admin = Admin("Admin", "admin@example.com", "0987654321", "456 Admin St")
 admin.add_menu_item(mamar_res, item1)
 admin.add_menu_item(mamar_res, item2)
 admin.add_menu_item(mamar_res, item3)
-
-# mn.add_item(item1)
-# mn.add_item(item2)
-# mn.add_item(item3)
-# mn.view_menu()
 
 
 customer1 = Customer("Alice", "alice@example.com", "1234567890", "123 Main St")
