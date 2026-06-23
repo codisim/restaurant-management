@@ -189,6 +189,11 @@ customer1 = Customer("Alice", "alice@example.com", "1234567890", "123 Main St")
 customer1.view_menu(mamar_res)
 
 
+input_name = input("Enter item name")
+item_quantity = int(input("Enter item quantity"))
+
+customer1.add_to_cart(mamar_res, input_name, item_quantity)
+customer1.view_cart(mamar_res)
 
 
 
