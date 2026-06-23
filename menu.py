@@ -1,25 +1,44 @@
-class Order():
+
+# Menu class to represent a menu item
+class Menu():
     def __init__(self):
-        self.items = {}
-        
+        self.items = []
+
     def add_item(self, item):
-        if item in self.items:
-            self.items[item] += item.quantity
+        self.items.append(item)
+
+
+    def find_item(self, item_name):
+        for item in self.items:
+            if item.name.lower() == item_name.lower():
+                return item
+        return None
+
+    def remove_item(self, item_name):
+        item = self.find_item(item_name)
+        if item:
+            self.items.remove(item)
+            print(f"Item '{item_name}' removed from the menu.")
         else:
-            self.items[item] = item.quantity
+            print(f"Item '{item_name}' not found in the menu.")
             
-    def remove_item(self, item):
-        if item in self.items:
-            del self.items[item]
-        else:
-            print(f"Item '{item.name}' not found in the cart.")
             
+    def view_menu(self):
+        print("Menu Items:")
+        print("Name\tPrice\tQuantity")
+        for item in self.items:
+            print(f"{item.name}\t{item.price}\t{item.quantity}")
+        
+        
+        
+        
+
+class MenuItem():
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
     
-    def total_price(self):
-        return sum(item.price * quantity for item, quantity in self.items.items()) 
     
-    def clear(self):
-        self.items = {}
-        
-        
-        
+    
+    
