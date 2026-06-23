@@ -1,5 +1,8 @@
 
 from abc import ABC
+from order import Order
+from menu import Menu, MenuItem
+from restaurent import Restaurant
 
 
 # User class to represent a user of the restaurant system
@@ -39,6 +42,13 @@ class Customer(User):
         
         print(f"Total Price: {self.card.total_price()}")
         
+        
+    def pay_bill(self, restaurant):
+        total = self.card.total_price()
+        print(f"Total Bill: {total}")
+        # Here you can implement payment logic (e.g., deducting from a balance, processing payment, etc.)
+        self.card.clear()
+        print("Payment successful. Thank you for your order!")
         
         
         
