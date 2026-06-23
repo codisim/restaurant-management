@@ -105,8 +105,6 @@ class Admin(User):
     
 
 
-
-
 # Restaurant class to manage employees
 class Restaurant():
     def __init__(self, name):
@@ -171,18 +169,27 @@ class MenuItem():
     
     
     
+
+mamar_res = Restaurant("Mamar Restaurant")
     
 mn = Menu()
 item1 = MenuItem("Pizza", 10.99, 20)
 item2 = MenuItem("Burger", 5.99, 30)
 item3 = MenuItem("Pasta", 8.99, 25)
-mn.add_item(item1)
-mn.add_item(item2)
-mn.add_item(item3)
-mn.view_menu()
+
+admin = Admin("Admin", "admin@example.com", "0987654321", "456 Admin St")
+admin.add_menu_item(mamar_res, item1)
+admin.add_menu_item(mamar_res, item2)
+admin.add_menu_item(mamar_res, item3)
+
+# mn.add_item(item1)
+# mn.add_item(item2)
+# mn.add_item(item3)
+# mn.view_menu()
 
 
-
+customer1 = Customer("Alice", "alice@example.com", "1234567890", "123 Main St")
+customer1.view_menu(mamar_res)
 
 
 
