@@ -65,7 +65,11 @@ def admin_menu():
         
         choice = int(input("Enter your choice: "))
         if choice == 1:
-            mamar_restaurant.view_menu()
+            item_name = input("Enter the name of the item: ")
+            item_price = float(input("Enter the price of the item: "))
+            item_quantity = int(input("Enter the quantity of the item: "))
+            new_item = FoodItem(item_name, item_price, item_quantity)
+            mamar_restaurant.add_menu_item(admin, new_item)
         elif choice == 2:
             item_name = input("Enter the name of the item to add to cart: ")
             quantity = int(input("Enter the quantity: "))
