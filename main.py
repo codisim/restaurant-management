@@ -1,7 +1,6 @@
-from food_item import FoodItem
-from menu import Menu
-from users import User, Customer, Admin
-from restaurant import Restaurant
+from menu import Menu, MenuItem
+from user import User, Customer, Admin
+from restaurent import Restaurant
 from order import Order
 
 
@@ -68,7 +67,7 @@ def admin_menu():
             item_name = input("Enter the name of the item: ")
             item_price = float(input("Enter the price of the item: "))
             item_quantity = int(input("Enter the quantity of the item: "))
-            new_item = FoodItem(item_name, item_price, item_quantity)
+            new_item = MenuItem(item_name, item_price, item_quantity)
             admin.add_menu_item(mamar_restaurant, new_item)
             
         elif choice == 2:
@@ -77,7 +76,8 @@ def admin_menu():
             employee_phone = input("Enter the phone number of the employee: ")
             employee_address = input("Enter the address of the employee: ")
             new_employee = Customer(employee_name, employee_email, employee_phone, employee_address)
-            admin.add_employee(mamar_restaurant, new_employee)
+            admin.add_employee(new_employee)
+            
         elif choice == 3:
             admin.view_employees(mamar_restaurant)
         elif choice == 4:

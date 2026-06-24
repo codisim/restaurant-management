@@ -1,3 +1,6 @@
+from menu import Menu
+
+
 # Restaurant class to manage employees
 class Restaurant():
     def __init__(self, name):
